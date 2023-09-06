@@ -1,51 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
-  
-  <title>Frontend Mentor | Product preview card component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  <!--flex-->
-  <main>
-    
-    <!--box-->
-  <section class="box">
-    <img src="./images/image-product-mobile.jpg" alt="Product">
+    <title>Frontend Mentor | Product preview card component</title>
 
-    <h6> PERFUME </h6>
-    <h1> Gabrielle Essence Eau De Parfum</h1>
-    <p>A floral, solar and voluptuous interpretation composed by Olivier Polge, 
-      Perfumer-Creator for the House of CHANEL. </p>
-     
-     <div>
-      <p>
-      $149.99
-      </p>
-      <P class="price">$169.99</P> 
-     </div>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <!--flex-->
+    <main>
+      <!--
+        Id= 1,
+        Status= useless class,
+        Reason= there is one section in the file
+      -->
+      <!--box-->
+      <section class="box">
+        <!--
+          Id= 2,
+          Status= wrong formating,
+          Suggested= box => [div.img, div.content],
+          Reason= the box parent should display as flex to control box horizontally and vertically among screens
+        -->
+        <img src="./images/image-product-mobile.jpg" alt="Product" />
+        <!--
+            Id= 3,
+            Status= wrong tag,
+            Suggested= p,
+            Reason= `PERFUME` is not subtitle, it could be category of product
+          -->
+        <h6>PERFUME</h6>
+        <h1>Gabrielle Essence Eau De Parfum</h1>
+        <p>
+          A floral, solar and voluptuous interpretation composed by Olivier
+          Polge, Perfumer-Creator for the House of CHANEL.
+        </p>
 
-  <!--add to cart-->
-  <div class="btn-box">
-    <img src="./images/icon-cart.svg" alt="cart box">
-    <p> Add to Cart</p> 
-  </div> 
-  </section>
-  </main>
-  
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Karen Nashaat</a>.
-  </footer>
-</body>
+        <!--
+            Id= 4,
+            Status= missing class,
+            Suggested= price-box,
+            Reason= there are more than one div in the page
+          -->
+        <div>
+          <!--
+              Id= 5,
+              Status= wrong tag,
+              Suggested= span,
+              Reason= strings are inlined
+            -->
+          <p>$149.99</p>
+          <!--
+              Id= 6,
+              Status= useless class,
+              Reason= you can access element by parent and psudo-class child
+            -->
+          <p>$169.99</p>
+        </div>
+
+        <!--add to cart-->
+        <div class="btn-box">
+          <!--
+              Id= 7,
+              Status= missing tag,
+              Suggested= button,
+              Reason= the function of element refer to button, this button contains img and plain text
+            -->
+          <img src="./images/icon-cart.svg" alt="cart box" />
+          <!--
+            Id= 8,
+            Status= useless tag,
+            Reason= when you add content in the button, this text doesn't need to tag, add text as a plain text
+          -->
+          <p>Add to Cart</p>
+        </div>
+      </section>
+    </main>
+
+    <!--
+      Id= 9,
+      Status= wrong place,
+      Suggested= inside main,
+      Reason= current case is uncontrolled with other elements, t think you can benifit from flex box in main
+    -->
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Karen Nashaat</a>.
+    </footer>
+  </body>
 </html>
